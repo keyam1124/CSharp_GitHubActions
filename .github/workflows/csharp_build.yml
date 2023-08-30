@@ -1,0 +1,21 @@
+name: C# Build
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '7.0'  # 使用する .NET SDK のバージョンを指定します
+
+    - name: Build with dotnet
+      run: dotnet build --configuration Release
