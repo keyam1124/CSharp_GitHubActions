@@ -6,6 +6,7 @@ public class UnitTest1
 {
     [Theory]
     [InlineData(1, 2, 3)]
+    [InlineData(1, 2, 5)]
     public void Test1(int a, int b, int expected)
     {
         var class1 = new Class1();
